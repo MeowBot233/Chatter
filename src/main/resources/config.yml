@@ -1,0 +1,2 @@
+chatFormat: "<{player}> {message}"
+nameFormat: "{prefix}{name}{suffix}"

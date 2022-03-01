@@ -1,0 +1,10 @@
+name: Chatter
+version: '${project.version}'
+main: yukisawanya.chatter.Chatter
+api-version: 1.18
+prefix: Chatter
+depend: [ Vault ]
+commands:
+  chatter_reload:
+    description: "Reload chatter config!"
+    usage: "/chatter_reload"
