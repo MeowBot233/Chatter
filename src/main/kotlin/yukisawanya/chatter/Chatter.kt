@@ -11,13 +11,16 @@ class Chatter : JavaPlugin() {
         val rsp = server.servicesManager.getRegistration(Chat::class.java)
         chat = rsp?.provider
         configuration = Configuration(this)
-        server.pluginManager.registerEvents(EventHandler(this), this)
-        getCommand("chatter_reload")?.run {
-
-        }
+        val handler = EventHandler(this)
+        server.pluginManager.registerEvents(handler, this)
+        server.onlinePlayers.forEach { handler.refreshName(it) }
+//        getCommand("chatter_reload")?.run {
+//
+//        }
     }
 
     override fun onDisable() {
         // Plugin shutdown logic
+
     }
 }
